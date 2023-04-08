@@ -187,8 +187,9 @@ export default function CarouselAbout() {
       {/*Listado de las Cards*/}
       <div className="card-container">
         {carouselAboutData.map((carouselAbout) => (
-          <Card style={{ width: "18rem" }} key={carouselAbout._id}>
+          <Card border="dark" style={{ width: "18rem" }} key={carouselAbout._id}>
             <Card.Img variant="top" src={carouselAbout.imagesCaA} />
+            <hr/>
             <Card.Text>{carouselAbout.contentCaA}</Card.Text>
             <button
               key={carouselAbout._id}

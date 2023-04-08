@@ -102,7 +102,7 @@ export default function CarouselC1() {
       {/**LISTADO DE LAS IMAGENES */}
       <div className="card-container">
         {carouselC1Data.map((noticia) => (
-          <Card style={{ width: "10rem" }} key={noticia._id}>
+          <Card border="dark" style={{ width: "10rem" }} key={noticia._id}>
             <Card.Img variant="top" src={noticia.imagesC1} />
             <button
               key={noticia._id}

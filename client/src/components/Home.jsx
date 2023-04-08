@@ -137,14 +137,16 @@ export default function Home() {
         <div className="uno1">
           <div className="card-container">
             {welcomeData.map((noticia) => (
-              <Card style={{ width: "20rem" }} key={noticia._id}>
+              <Card border="dark" style={{ width: "20rem" }} key={noticia._id}>
                 <Card.Title>{noticia.title}</Card.Title>
+                <hr/>
                 <Card.Img variant="top" src={noticia.images} />
+                <hr/>
                 <Card.Text>{noticia.content}</Card.Text>
                 <button
                   key={noticia._id}
                   onClick={() => eliminarEvento(noticia._id)}
-                  class="btn btn-danger"
+                  className="btn btn-danger"
                 >
                   Eliminar
                 </button>

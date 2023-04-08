@@ -82,10 +82,13 @@ export default function News() {
 
       <div className="card-container">
         {noticias.map((noticia) => (
-          <Card style={{ width: "25rem" }} key={noticia._id}>
+          <Card border="dark" style={{ width: "25rem" }} key={noticia._id}>
             <Card.Title>{noticia.title}</Card.Title>
+            <hr/>
             <Card.Img variant="top" src={noticia.images} />
+            <hr/>
             <Card.Text>{noticia.content}</Card.Text>
+            <hr/>
             <Card.Text>{moment(noticia.date).format("DD/MM/YYYY")}</Card.Text>
             <button
               key={noticia._id}

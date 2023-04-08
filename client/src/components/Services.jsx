@@ -217,9 +217,11 @@ export default function Services() {
       {/*Listado de las Cards*/}
       <div className="card-container">
       {servicesCardData.map((noticia) => (
-          <Card style={{ width: "10rem" }} key={noticia._id}>
+          <Card  border="dark" style={{ width: "10rem" }} key={noticia._id}>
             <Card.Title>{noticia.titleSC}</Card.Title>
+            <hr/>
             <Card.Img variant="top" src={noticia.imagesSC} />
+            <hr/>
             <Card.Text>{noticia.contentSC}</Card.Text>
             <button
               key={noticia._id}

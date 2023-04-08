@@ -217,9 +217,11 @@ export default function Innovation() {
       {/*Listado de las Cards*/}
       <div className="card-container">
       {innovationData.map((noticia) => (
-          <Card style={{ width: "18rem" }} key={noticia._id}>
+          <Card border="dark" style={{ width: "18rem" }} key={noticia._id}>
             <Card.Title>{noticia.titleInn}</Card.Title>
+            <hr/>
             <Card.Img variant="top" src={noticia.imagesInn} />
+            <hr/>
             <Card.Text>{noticia.contentInn}</Card.Text>
             <button
               key={noticia._id}

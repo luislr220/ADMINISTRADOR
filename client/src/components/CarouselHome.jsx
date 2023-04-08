@@ -100,8 +100,9 @@ export default function CarouselHome() {
 
       <div className="card-container">
         {carouselData.map((noticia) => (
-          <Card style={{ width: "10rem" }} key={noticia._id}>
+          <Card border="dark" style={{ width: "10rem" }} key={noticia._id}>
             <Card.Img variant="top" src={noticia.images} />
+            <hr/>
             <button
               key={noticia._id}
               onClick={() => eliminarImagen(noticia._id)}
