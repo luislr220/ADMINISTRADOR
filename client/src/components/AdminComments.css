@@ -1,0 +1,23 @@
+.Comentarios{
+    padding: 10%;
+    width: 50%;
+    margin-bottom: 5%;
+    background-color: darkgrey;
+
+}
+
+.PadreComments{
+    text-align: center;
+}
+
+
+.btn {
+    margin: 1%;
+  }
+
+  .linea-horizontal {
+    border-top: 2px solid #000000;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 20px;
+}

@@ -66,13 +66,6 @@
   overflow: hidden;
 }
 
-.eliminarbtn {
+.btn {
   margin: 1%;
-  background-color: rgb(180, 46, 46);
-  border-radius: 10px 10px 10px 10px;
-}
-
-.eliminarbtn2 {
-  background-color: rgb(180, 46, 46);
-  border-radius: 10px 10px 10px 10px;
 }

@@ -10,10 +10,6 @@ export default function NewsForm(props) {
  
   const [showForm, setShowForm] = useState(false);
 
-  //const [editMode, setEditMode] = useState(false);
-  //const [showForm, setShowForm] = useState(false); // Nuevo estado
-
-
   useEffect(() => {
     if (props.noticia) {
       setTitle(props.noticia.title);
@@ -93,7 +89,7 @@ export default function NewsForm(props) {
   return (
     <div className="NewsForm">
       {!showForm && (
-        <button onClick={() => setShowForm(true)} className="button-Agregar">Agregar noticia</button>
+        <button onClick={() => setShowForm(true)} className="btn btn-success">Agregar noticia</button>
       )}
       {showForm && (
         <form onSubmit={handleSubmit} className="NewsFormF">
@@ -137,8 +133,8 @@ export default function NewsForm(props) {
           </div>
 
           <div className="button-group">
-            <button type="submit" className="button-Agregar">{noticiaEditada ? 'Actualizar' : 'Guardar'}</button>
-            <button type="button" onClick={handleCancel} className="eliminarbtn2">
+            <button type="submit" className="btn btn-success">{noticiaEditada ? 'Actualizar' : 'Guardar'}</button>
+            <button type="button" onClick={handleCancel} className="btn btn-danger">
               Cancelar
             </button>
           </div>
