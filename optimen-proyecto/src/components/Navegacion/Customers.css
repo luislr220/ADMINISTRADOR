@@ -1,0 +1,30 @@
+.header {
+    background-color: #20274c;
+    
+  }
+  .titleC {
+    
+    text-align: center;
+    color: #a8a8a8;
+    height: 150px;
+    padding-top: 2%;
+    font-size: 45px;
+    text-shadow: #a8a8a8;
+    margin-inline: 30%;
+  }
+   p.textC{
+    
+    text-align: center;
+    color: #a8a8a8;
+    padding-inline: 2%;
+    font-size: 18px;
+    text-shadow: #a8a8a8;
+    margin-block-start: 1%;
+   
+   }
+
+   
+   .CBody{
+    padding-top: 9%;
+    padding-bottom: 3%;
+   }

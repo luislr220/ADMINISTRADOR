@@ -1,0 +1,99 @@
+.ContactForm {
+  background-color: #a8a8a8;
+  padding: 10px;
+}
+
+
+.contact_form {
+  width: 50%;
+  background-color: #20274c;
+  padding-left: 30px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.colocar_nombre {
+  color: #a8a8a8;
+}
+
+.colocar_email {
+  color: #a8a8a8
+}
+
+.colocar_mensaje {
+  color: #a8a8a8;
+}
+
+.h1C {
+  padding-left: 3%;
+  background-image: url(https://img.freepik.com/vector-premium/fondo-moderno-lujo-forma-geometrica-vector-tema-color-azul-marino-oscuro-premium_13125-230.jpg);
+
+}
+
+#nombre {
+  background-color: #2e3d5b;
+  border: none;
+  height: 40px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+#email {
+  background-color: #2e3d5b;
+  border: none;
+  height: 40px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+#mensaje {
+  background-color: #2e3d5b;
+  border: none;
+  width: 90%;
+  height: 150px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+label {
+  display: block;
+  float: center;
+}
+
+
+button {
+  background-color: #273582;
+  border-style: solid;
+  width: 100px;
+  cursor: pointer;
+}
+
+
+button p {
+  color: #fff;
+}
+
+.Pc {
+  font-size: 14px;
+  color: #0e0e0e;
+}
+
+
+
+.foo {
+  background-color: #2459af;
+  margin-top: .5%;
+  display: flex;
+}
+
+
+::-webkit-input-placeholder {
+  color: #a8a8a8;
+}
+
+
+::-webkit-textarea-placeholder {
+  color: #a8a8a8;
+}
+
+.formulario {
+  padding: 3%;
+}

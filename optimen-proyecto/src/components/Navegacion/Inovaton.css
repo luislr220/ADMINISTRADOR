@@ -1,0 +1,35 @@
+.ftInovation {
+    color: #a8a8a8;
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(https://img.freepik.com/vector-premium/fondo-moderno-lujo-forma-geometrica-vector-tema-color-azul-marino-oscuro-premium_13125-230.jpg);
+}
+
+.Inovation {
+    background-color: #518ceb;
+    margin-bottom: 1%;
+    display: flex;
+
+}
+
+.Inovation img {
+    width: 50%;
+    height: 400px;
+
+}
+
+.Inovation-text-container {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.Inovation-text {
+    color: #fff;
+    text-align: center;
+}
+
+.InovationContenedor {
+    margin: 2%;
+}

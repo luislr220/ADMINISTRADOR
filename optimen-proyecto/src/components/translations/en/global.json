@@ -1,0 +1,84 @@
+{
+    "navbar":{
+        "home":"Home",
+        "services":"Services",
+        "contact-Us": "Contact Us",
+        "news":"News",
+        "inovation":"Inovation",
+        "about-Us":"About Us",
+        "customers":"Customers",
+
+
+        "Welcome-to-Optimen":"Welcome to Optimen",
+        "Unique-Team":"Unique Team of Resources Management and Optimization Experts and passionate Software Developers",
+
+
+        "A-world":"A World Class Global Enterprise",
+        "Mexican":"Mexican Company with the following experience since 2006: Resource Optimization Consultancy and Configuration Support Services IT Software Solutions Development",
+        "servicesC_H":"Services",
+        "Consultancy":"Consultancy",
+        "Auditing":"Auditing",
+        "Business":"Business Rules Development",
+        "Implementation":"Implementation Outsorsing",
+        "Innovation":"Innovation",
+        "Interfaces":"Interfaces Development",
+
+        "Partnership":"Partnerships and Affiliations",
+
+        "Our-Services":"Our Services",
+        "Consultancy-Services":"Consultancy Services",
+        "Auditing-and":"Auditing and procces improvement",
+        "Development-of":"Development of business rules for resource management",
+        "Implement-Aircraft":"Implement Aircraft and Crew Tracking Systems and Optimizers",
+        "Innovation-and":"Innovation and Development of new systems ",
+        "Development":"Development of Integrations / Interfaces for computer systems",
+        
+        "first-name":"First Name",
+        "write-your-First-name":"write your First name",
+        "last-name":"Last Name",
+        "write-your-Last-name":"write your Last name",
+        "email": "Email",
+        "write-your-email":"write your email",
+        "message":"Message",
+        "Leave-your-message-here":"Leave your message here...",
+        "send":"Send",
+
+
+        "titulo":"Forum BJXAEROSPACE",
+        "descripcion":"We invite you to participate in the 2nd Business Forum of the Bajìo A.C Aerospace Cluster, follow the conferences, panels, and meetups of the event on our platform and social networks.",
+
+        "titulo2":"14th Anniversary OPTIMEN",
+        "descripcion2":"14 years streamlining global mobility through a passionate software developers team. Congratulations TEAM Optimen!",
+
+        "innovation-Hub":"Innovation Hub",
+        "Hannover-Messe":"Hannover Messe",
+        "Hannover-Messe_P":"Optimen family present at 'Industrial Transformation Mexico, Hannover Messe HANNOVER MESSE is the most important international platform and hot spot for industrial transformation' - with excellent innovations or unusual products.",
+        "Ana-Avatar-XPrice":"Ana Avatar XPrice",
+        "Ana-Avatar-XPrice_P":"Optimen teamed up with Inbiodroid are working together on ANA Avatar XPRIZE challenge that aims to create an Avatar system that can transport human presence to a remote location in real time.",
+        "innovation-Hub_P":"Optimen inaugurated its innovation center, a space focus on competencies development for the aeronautical sector.",
+        "AWS-Mentefactura-GTO-Challenge":"AWS Mentefactura GTO Challenge",
+        "AWS-Mentefactura-GTO-Challenge_P":"Hackathon organized by the alliance between AWS, Optimen, Educafin, IdeaGTO, SEG and GAP with the purpose that students, Guanajuato talent, will execute innovative projects aimed at improving airport services.",
+        "EDUCATE OPTIMEN":"EDUCATE OPTIMEN",
+
+
+        "What-is-Optimen?":"What is Optimen?",
+        "What-is-Optimen?_P":"Optimen is a Mexican Software Development company that provides resources management and optimization services to different industries. The company was designated and approved as an International Service Contractor for Jeppesen and Boeing.",
+        "Our-Purpose":"Our Purpose",
+        "Mission":"Mission",
+        "Mission_P":"Support and facilitate Air Lines around the world to maintain reliable and sustainable operations through Technology, Innovation and living our Values.",
+        "Vision":"Vision",
+        "Vision_P":"To be the First option in Software, Technology and Innovation services for the global Airlines in the area of Aeronautical operational control.",
+        "Values":"Values",
+        "Values_P":"Trustworthy Respect Integrity Teamwork Innovation",
+        "Airline-Experience":"Airline Experience",
+        "Our-Story-Through-the-Time":"Our Story Through the Time",
+        "The-beginning":"The beginning",
+
+        "Our-Customers":"Our Customers",
+        "Our-Customers_P":"Through our capabilities, the services we provide, and our commitment, we implement projects resulting in satisfied clients and success stories.",
+        "Our-Project-Experience":"Our Project Experience",
+        "Our-Project-Experience_P":"Through our experience as certified Jeppesen/Boeing consultants, we contribute to the support of the configuration and customization of state-of-the-art optimization software for several key airlines in the aeronautical sector at an international level."
+
+
+    }
+}

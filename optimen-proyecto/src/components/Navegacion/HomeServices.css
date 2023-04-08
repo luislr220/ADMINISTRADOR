@@ -1,0 +1,53 @@
+.HomeSer {
+    background-image: url(https://img.freepik.com/vector-premium/fondo-moderno-lujo-forma-geometrica-vector-tema-color-azul-marino-oscuro-premium_13125-230.jpg);
+    display: flex;
+}
+
+.Aworld {
+    padding: 3%;
+    color: aliceblue;
+    width: 50%;
+}
+
+.textS {
+    color: #a8a8a8;
+    font-weight: bolder;
+}
+
+.textSP {
+    color: #a8a8a8;
+}
+
+.card {
+    width: 25rem;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color: #518ceb;
+    text-align: center;
+}
+
+.pad {
+    padding: 2%;
+}
+
+
+.list-group {
+    background-color: #518ceb;
+}
+
+.list-group-item {
+    text-align: center;
+    /* Centrar el texto */
+    margin: auto;
+    /* Centrar la lista */
+}
+
+.textservicesh1 {
+    text-align: center;
+    color: #a8a8a8;
+    padding-top: 2%;
+}
+
+.fondoCard {
+    margin-left: 15%;
+}

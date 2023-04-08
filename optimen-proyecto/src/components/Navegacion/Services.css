@@ -1,0 +1,45 @@
+.ftServices {
+    color: #a8a8a8;
+    height: 25vh;
+    display: flex;
+    padding-left: 2%;
+    align-items: center;
+    background-image: url(https://img.freepik.com/vector-premium/fondo-moderno-lujo-forma-geometrica-vector-tema-color-azul-marino-oscuro-premium_13125-230.jpg);
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service {
+    background-color: #518ceb;
+    margin-bottom: 2%;
+    padding: 5%;
+    display: flex;
+    width: 100%;
+
+}
+
+.service img {
+    width: 10%;
+    height: 100px;
+    margin-left: 10%;
+
+}
+
+.service-text-container {
+    width: 70%;
+    margin-left: 10px;
+}
+
+.service-text {
+    color: #fff;
+    text-align: center;
+}
+
+.ServicesContenedor {
+    margin: 2%;
+}

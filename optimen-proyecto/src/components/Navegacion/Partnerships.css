@@ -1,0 +1,37 @@
+body{
+    background-color: #20274c;
+    
+}
+.tituloPart{
+    text-align: center;
+    color: #a8a8a8;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Agrega un margen inferior para separar el título del carrusel */
+}
+
+
+@media only screen and (max-width: 600px) {
+  .tituloPart{
+    position: relative; /* Posiciona el título de forma relativa */
+    top: 0; /* Coloca el título en la parte superior */
+    margin-bottom: 0; /* Elimina el margen inferior */
+  }
+
+  .carousel-root {
+    margin-top: 100px; /* Agrega un margen superior para separar el carrusel del título */
+  }
+}
+
+
+
+.styled.div{
+margin: 0 auto;
+margin-top: 100px;
+width: 480px;
+flex-wrap: wrap;
+}
+
+.padre{
+    overflow: hidden;
+    
+}

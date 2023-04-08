@@ -1,0 +1,25 @@
+.WelcomeB{
+    background-color: #20274c;
+    display: flex;
+}
+
+.Welcome{
+    padding: 3%;
+    color: aliceblue;
+}
+
+.Avion1{
+    float: right;
+    padding: 2%;
+    width: 100%;
+    border-radius: 5%;
+}
+
+.textWl{
+    color: #2459af;
+    font-weight: bolder;
+    font-size: 500%;
+    
+}
+
+
