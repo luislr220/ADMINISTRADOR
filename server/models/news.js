@@ -17,11 +17,7 @@ const newsSchema = new mongoose.Schema({
     type: Date,
     required: true
     
-  },
-  comments: [{
-    type: String,
-    required: false
-  }]
+  }
 });
 
 module.exports = mongoose.model('News', newsSchema);

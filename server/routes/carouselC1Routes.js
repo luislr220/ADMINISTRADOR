@@ -1,13 +1,13 @@
 const express = require('express');
-const Event = require('../models/event');
+const CarouselC1 = require('../models/carouselC1');
 
 const router = express.Router();
 
 // Obtener todas los eventos
 router.get('/', async (req, res) => {
   try {
-    const event = await Event.find({});
-    res.send(event);
+    const carouselC1 = await CarouselC1.find({});
+    res.send(carouselC1);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -17,8 +17,8 @@ router.get('/', async (req, res) => {
 // Obtener un evento por ID
 router.get('/:id', async (req, res) => {
   try {
-    const event = await Event.findById(req.params.id);
-    res.send(event);
+    const carouselC1 = await CarouselC1.findById(req.params.id);
+    res.send(carouselC1);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -28,9 +28,9 @@ router.get('/:id', async (req, res) => {
 // Crear una nuevo evento
 router.post('/', async (req, res) => {
   try {
-    const event = new Event(req.body);
-    await event.save();
-    res.send(event);
+    const carouselC1 = new CarouselC1(req.body);
+    await carouselC1.save();
+    res.send(carouselC1);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -40,8 +40,8 @@ router.post('/', async (req, res) => {
 // Actualizar un evento por ID
 router.put('/:id', async (req, res) => {
   try {
-    const event = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.send(event);
+    const carouselC1 = await CarouselC1.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.send(carouselC1);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
 // Eliminar una evento por ID
 router.delete('/:id', async (req, res) => {
   try {
-    await Event.findByIdAndDelete(req.params.id);
+    await CarouselC1.findByIdAndDelete(req.params.id);
     res.send('evento eliminado');
   } catch (error) {
     console.log(error);

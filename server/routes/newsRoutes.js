@@ -21,8 +21,7 @@ router.post("/", async function (req, res, next) {
     title: req.body.title,
     content: req.body.content,
     date: req.body.date,
-    images: req.body.images || [], // Por defecto, el campo de imágenes será un arreglo vacío si no se especifica en la solicitud
-    comment: [] // Por defecto, el campo de comentarios será un arreglo vacío
+    images: req.body.images // Por defecto, el campo de imágenes será un arreglo vacío si no se especifica en la solicitud
   });
 
   try {
@@ -35,7 +34,6 @@ router.post("/", async function (req, res, next) {
   }
 });
 
-
 // Actualizar una noticia por ID
 router.put("/:_id", async function (req, res, next) {
   const filter = {_id: req.params._id};
@@ -43,7 +41,6 @@ router.put("/:_id", async function (req, res, next) {
     title: req.body.title,
     content: req.body.content,
     date: req.body.date,
-    comment:req.body.comment || [],
     images: req.body.images || [] // Por defecto, el campo de imágenes será un arreglo vacío si no se especifica en la solicitud
   };
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const eventSchema = new mongoose.Schema({
+const seccionH2Schema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -8,8 +8,7 @@ const eventSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true,
-  },
-  images: {type:String},
+  }
 });
 
-module.exports = mongoose.model('Event', eventSchema);
+module.exports = mongoose.model('SeccionH2', seccionH2Schema);
