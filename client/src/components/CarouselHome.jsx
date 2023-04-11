@@ -74,11 +74,11 @@ export default function CarouselHome() {
         <div className="uno1">
           {/*Formulario para editar el caurusel */}
           <form onSubmit={handleCarouselFormSubmit}>
-          <h1>Sección 3</h1>
-          <p>Aqui puedes quitar o agregar mas imagenes al carrusel</p>
+          <h1>Section 3</h1>
+          <p>Here you can remove or add more images to the carousel</p>
             <FloatingLabel
               controlId="floatingInput"
-              label="Imagen"
+              label="image URL"
               className="mb-3"
             >
               <Form.Control
@@ -93,7 +93,7 @@ export default function CarouselHome() {
 
             
             
-            <button type="submit" className="btn btn-success" >Guardar Imagen</button>
+            <button type="submit" className="btn btn-success" >Save Image</button>
           </form>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function CarouselHome() {
               onClick={() => eliminarImagen(noticia._id)}
               className="btn btn-danger"
             >
-              Eliminar Imagen
+              Delete Image
             </button>
           </Card>
         ))}

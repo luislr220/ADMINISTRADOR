@@ -44,7 +44,7 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/News">
-                Noticias
+                News
               </Link>
             </li>
             <li className="nav-item">

@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import "./AboutUs.css";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import CarouselAbout from "./CarouselAbout";
 export default function AboutUs() {
@@ -18,6 +19,15 @@ export default function AboutUs() {
   const [lineaAboutData, setLineaAboutData] = useState([]);
   //editar los card
   const [editingLineaAbout, setEditingLineaAbout] = useState(null);
+
+  const { user, isAuthenticated } = useAuth0();
+
+  const isAdmin =
+    isAuthenticated &&
+    user &&
+    user["https://optimenLogin.com/roles"] &&
+    user["https://optimenLogin.com/roles"].includes("admin");
+  console.log("isAdmin value: ", isAdmin);
 
   //usamos un useEffect para tarer los datos del servidor y vidualizarlos
   useEffect(() => {
@@ -117,10 +127,9 @@ export default function AboutUs() {
 
   return (
     <div>
-      <h1>Agregar/Editar imagenes del Carousel</h1>
       <CarouselAbout />
 
-      <h1>Agregar/Editar la linea del tiempo</h1>
+      <hr />
 
       {/*Formulario para insertar los card */}
       <div className="uno">
@@ -132,10 +141,18 @@ export default function AboutUs() {
           }
         >
           <h2>
-            {editingLineaAbout ? "Editar la Linea" : "Agregar nueva Historia"}
+            {editingLineaAbout
+              ? "Edit the line"
+              : isAdmin
+              ? "Add new history"
+              : "Edit the line"}
           </h2>
 
-          <FloatingLabel controlId="floatingInput" label="Año" className="mb-3">
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Year"
+            className="mb-3"
+          >
             <Form.Control
               type="text"
               placeholder="name@example.com"
@@ -160,7 +177,7 @@ export default function AboutUs() {
 
           <FloatingLabel
             controlId="floatingInput"
-            label="Titulo"
+            label="Title"
             className="mb-3"
           >
             <Form.Control
@@ -187,7 +204,7 @@ export default function AboutUs() {
 
           <FloatingLabel
             controlId="floatingTextarea"
-            label="Descripcción"
+            label="Description"
             className="mb-3"
           >
             <Form.Control
@@ -213,7 +230,11 @@ export default function AboutUs() {
           </FloatingLabel>
 
           <button type="submit" className="btn btn-success">
-            {editingLineaAbout ? "Guardar" : "Agregar"}
+            {editingLineaAbout
+              ? "Save changes"
+              : isAdmin
+              ? "Add history"
+              : "Save changes"}
           </button>
         </form>
       </div>
@@ -222,11 +243,11 @@ export default function AboutUs() {
         <Table striped bordered hover className="TablaAb">
           <thead>
             <tr>
-              <th>Año</th>
-              <th>Titulo</th>
-              <th>Descripcción</th>
-              <th>Eliminar</th>
-              <th>Actualizar</th>
+              <th>Year</th>
+              <th>Title</th>
+              <th>Description</th>
+              {isAdmin ? <th>Delete</th> : null}
+              <th>Update</th>
             </tr>
           </thead>
           <tbody>
@@ -235,21 +256,23 @@ export default function AboutUs() {
                 <td>{linea.yearLA}</td>
                 <td>{linea.titleLA}</td>
                 <td>{linea.contentLA}</td>
-                <td>
-                  <button
-                    key={linea._id}
-                    onClick={() => eliminarLinea(linea._id)}
-                    className="btn btn-danger"
-                  >
-                    Eliminar
-                  </button>
-                </td>
+                {isAdmin ? (
+                  <td>
+                    <button
+                      key={linea._id}
+                      onClick={() => eliminarLinea(linea._id)}
+                      className="btn btn-danger"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                ) : null}
                 <td>
                   <button
                     onClick={() => activateEditMode(linea)}
                     className="btn btn-success"
                   >
-                    Actualizar
+                    Update
                   </button>
                 </td>
               </tr>

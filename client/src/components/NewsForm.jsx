@@ -89,12 +89,12 @@ export default function NewsForm(props) {
   return (
     <div className="NewsForm">
       {!showForm && (
-        <button onClick={() => setShowForm(true)} className="btn btn-success">Agregar noticia</button>
+        <button onClick={() => setShowForm(true)} className="btn btn-success">Add News</button>
       )}
       {showForm && (
         <form onSubmit={handleSubmit} className="NewsFormF">
           <div className="form-group">
-            <label htmlFor="titulo">Título:</label>
+            <label htmlFor="titulo">Title:</label>
             <input
               type="text"
               id="title"
@@ -104,7 +104,7 @@ export default function NewsForm(props) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="descripcion">Descripción:</label>
+            <label htmlFor="descripcion">Description:</label>
             <textarea
               id="content"
               value={content}
@@ -113,7 +113,7 @@ export default function NewsForm(props) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="imagen">URL de la imagen:</label>
+            <label htmlFor="imagen">image URL:</label>
             <input
               type="text"
               id="images"
@@ -123,7 +123,7 @@ export default function NewsForm(props) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="fecha">Fecha:</label>
+            <label htmlFor="fecha">Date:</label>
             <input
               type="date"
               id="date"
@@ -133,9 +133,9 @@ export default function NewsForm(props) {
           </div>
 
           <div className="button-group">
-            <button type="submit" className="btn btn-success">{noticiaEditada ? 'Actualizar' : 'Guardar'}</button>
+            <button type="submit" className="btn btn-success">{noticiaEditada ? 'Update' : 'Save'}</button>
             <button type="button" onClick={handleCancel} className="btn btn-danger">
-              Cancelar
+              Cancel
             </button>
           </div>
         </form>

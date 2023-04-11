@@ -3,6 +3,7 @@ import axios from "axios";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function CarouselAbout() {
   //Función para el formulario del carrusel
@@ -16,6 +17,15 @@ export default function CarouselAbout() {
 
   //editar los card
   const [editingCAbout, setEditingCAbout] = useState(null);
+
+  const { user, isAuthenticated } = useAuth0();
+
+  const isAdmin =
+    isAuthenticated &&
+    user &&
+    user["https://optimenLogin.com/roles"] &&
+    user["https://optimenLogin.com/roles"].includes("admin");
+  console.log("isAdmin value: ", isAdmin);
 
   // Obtener los datos guardados en el servidor al cargar la página
   useEffect(() => {
@@ -122,11 +132,17 @@ export default function CarouselAbout() {
               : handleCarouselAboutFormSubmit
           }
         >
-          <h2>{editingCAbout ? "Editar" : "Agregar"}</h2>
+          <h2>
+            {editingCAbout
+              ? "Edit carousel"
+              : isAdmin
+              ? "Add Image"
+              : "Edit carousel"}
+          </h2>
 
           <FloatingLabel
             controlId="floatingInput"
-            label="Imagen"
+            label="Image URL"
             className="mb-3"
           >
             <Form.Control
@@ -153,7 +169,7 @@ export default function CarouselAbout() {
 
           <FloatingLabel
             controlId="floatingTextarea"
-            label="Descripcción"
+            label="Description"
             className="mb-3"
           >
             <Form.Control
@@ -179,7 +195,11 @@ export default function CarouselAbout() {
           </FloatingLabel>
 
           <button type="submit" className="btn btn-success">
-            {editingCAbout ? "Guardar cambios" : "Agregar"}
+            {editingCAbout
+              ? "Save changes"
+              : isAdmin
+              ? "Add image"
+              : "Save changes"}
           </button>
         </form>
       </div>
@@ -187,22 +207,28 @@ export default function CarouselAbout() {
       {/*Listado de las Cards*/}
       <div className="card-container">
         {carouselAboutData.map((carouselAbout) => (
-          <Card border="dark" style={{ width: "18rem" }} key={carouselAbout._id}>
+          <Card
+            border="dark"
+            style={{ width: "18rem" }}
+            key={carouselAbout._id}
+          >
             <Card.Img variant="top" src={carouselAbout.imagesCaA} />
-            <hr/>
+            <hr />
             <Card.Text>{carouselAbout.contentCaA}</Card.Text>
+            {isAdmin ? (
             <button
               key={carouselAbout._id}
               onClick={() => eliminarCa(carouselAbout._id)}
               className="btn btn-danger"
             >
-              Eliminar Imagen
+              Delete
             </button>
+            ):null}
             <button
               onClick={() => activateEditMode(carouselAbout)}
               className="btn btn-success"
             >
-              Actualizar
+              Update
             </button>
           </Card>
         ))}

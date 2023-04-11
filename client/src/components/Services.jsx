@@ -4,6 +4,8 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 export default function Services() {
   //constante para la constante que utilizaremos para el form
   const [servicesCardForm, setServicesCardForm] = useState({
@@ -16,6 +18,15 @@ export default function Services() {
   const [servicesCardData, setServicesCardData] = useState([]);
   //editar los card
   const [editingService, setEditingService] = useState(null);
+
+  const { user, isAuthenticated } = useAuth0();
+
+  const isAdmin =
+    isAuthenticated &&
+    user &&
+    user["https://optimenLogin.com/roles"] &&
+    user["https://optimenLogin.com/roles"].includes("admin");
+  console.log("isAdmin value: ", isAdmin);
 
   //usamos un useEffect para tarer los datos del servidor y vidualizarlos
   useEffect(() => {
@@ -115,7 +126,7 @@ export default function Services() {
 
   return (
     <div>
-      <br/>      
+      <br />
       {/*Formulario para insertar los card */}
       <div className="uno">
         <form
@@ -125,11 +136,17 @@ export default function Services() {
               : handleServicesCardFormSubmit
           }
         >
-          <h2>{editingService ? "Editar servicio" : "Agregar servicio"}</h2>
+          <h2>
+            {editingService
+              ? "Add service"
+              : isAdmin
+              ? "Add service"
+              : "Update service"}
+          </h2>
 
           <FloatingLabel
             controlId="floatingInput"
-            label="Titulo"
+            label="Title"
             className="mb-3"
           >
             <Form.Control
@@ -156,7 +173,7 @@ export default function Services() {
 
           <FloatingLabel
             controlId="floatingInput"
-            label="Imagenes"
+            label="Image URL"
             className="mb-3"
           >
             <Form.Control
@@ -183,7 +200,7 @@ export default function Services() {
 
           <FloatingLabel
             controlId="floatingTextarea"
-            label="Descripcción"
+            label="Description"
             className="mb-3"
           >
             <Form.Control
@@ -209,32 +226,38 @@ export default function Services() {
           </FloatingLabel>
 
           <button type="submit" className="btn btn-success">
-            {editingService ? "Guardar cambios" : "Agregar servicio"}
+            {editingService
+              ? "Guardar changes"
+              : isAdmin
+              ? "Add service"
+              : "Save changes"}
           </button>
         </form>
       </div>
 
       {/*Listado de las Cards*/}
       <div className="card-container">
-      {servicesCardData.map((noticia) => (
-          <Card  border="dark" style={{ width: "10rem" }} key={noticia._id}>
+        {servicesCardData.map((noticia) => (
+          <Card border="dark" style={{ width: "10rem" }} key={noticia._id}>
             <Card.Title>{noticia.titleSC}</Card.Title>
-            <hr/>
+            <hr />
             <Card.Img variant="top" src={noticia.imagesSC} />
-            <hr/>
+            <hr />
             <Card.Text>{noticia.contentSC}</Card.Text>
-            <button
-              key={noticia._id}
-              onClick={() => eliminarSCard(noticia._id)}
-              className="btn btn-danger"
-            >
-              Eliminar
-            </button>
+            {isAdmin ? (
+              <button
+                key={noticia._id}
+                onClick={() => eliminarSCard(noticia._id)}
+                className="btn btn-danger"
+              >
+                Delete
+              </button>
+            ) : null}
             <button
               onClick={() => activateEditMode(noticia)}
               className="btn btn-success"
             >
-              Actualizar
+              Update
             </button>
           </Card>
         ))}

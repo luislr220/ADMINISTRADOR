@@ -116,7 +116,7 @@ export default function Innovation() {
   return (
     <div>
       {/*Formulario para insertar los card */}
-      <br/>
+      <br />
       <div className="uno">
         <form
           onSubmit={
@@ -125,11 +125,11 @@ export default function Innovation() {
               : handleInnovationFormSubmit
           }
         >
-          <h2>{editingInnovation ? "Editar" : "Agregar"}</h2>
+          <h2>{editingInnovation ? "Edit" : "Add"}</h2>
 
           <FloatingLabel
             controlId="floatingInput"
-            label="Titulo"
+            label="Title"
             className="mb-3"
           >
             <Form.Control
@@ -156,7 +156,7 @@ export default function Innovation() {
 
           <FloatingLabel
             controlId="floatingInput"
-            label="Imagenes"
+            label="Image URL"
             className="mb-3"
           >
             <Form.Control
@@ -183,7 +183,7 @@ export default function Innovation() {
 
           <FloatingLabel
             controlId="floatingTextarea"
-            label="Descripcción"
+            label="Description"
             className="mb-3"
           >
             <Form.Control
@@ -209,40 +209,36 @@ export default function Innovation() {
           </FloatingLabel>
 
           <button type="submit" className="btn btn-success">
-            {editingInnovation ? "Guardar cambios" : "Agregar"}
+            {editingInnovation ? "Save changes" : "Add"}
           </button>
         </form>
       </div>
 
       {/*Listado de las Cards*/}
       <div className="card-container">
-      {innovationData.map((noticia) => (
+        {innovationData.map((noticia) => (
           <Card border="dark" style={{ width: "18rem" }} key={noticia._id}>
             <Card.Title>{noticia.titleInn}</Card.Title>
-            <hr/>
+            <hr />
             <Card.Img variant="top" src={noticia.imagesInn} />
-            <hr/>
+            <hr />
             <Card.Text>{noticia.contentInn}</Card.Text>
             <button
               key={noticia._id}
               onClick={() => eliminarInnovation(noticia._id)}
               className="btn btn-danger"
             >
-              Eliminar
+              Delete
             </button>
             <button
               onClick={() => activateEditMode(noticia)}
               className="btn btn-success"
             >
-              Actualizar
+              Update
             </button>
           </Card>
         ))}
       </div>
-                
-
-
-
     </div>
   );
 }

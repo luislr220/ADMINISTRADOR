@@ -73,11 +73,11 @@ export default function CarouselC2() {
       <div className="uno1">
         {/*Formulario para editar el caurusel */}
         <form onSubmit={handleCarouselC2FormSubmit}>
-          <h1>Sección 2</h1>
-          <p>Aqui puedes quitar o agregar mas imagenes al carrusel</p>
+          <h1>Section 2</h1>
+          <p>Here you can remove or add more images to the carousel</p>
           <FloatingLabel
             controlId="floatingInput"
-            label="Imagen"
+            label="Image URL"
             className="mb-3"
           >
             <Form.Control
@@ -94,7 +94,7 @@ export default function CarouselC2() {
           </FloatingLabel>
 
           <button type="submit" className="btn btn-success">
-            Guardar Imagen
+            Save image
           </button>
         </form>
       </div>
@@ -104,12 +104,13 @@ export default function CarouselC2() {
         {carouselC2Data.map((noticia) => (
           <Card border="dark" style={{ width: "10rem"}} key={noticia._id}>
             <Card.Img variant="top" src={noticia.imagesC2} />
+            <hr/>
             <button
               key={noticia._id}
               onClick={() => eliminarImagenC2(noticia._id)}
               className="btn btn-danger"
             >
-              Eliminar Imagen
+              Delete image
             </button>
           </Card>
         ))}

@@ -1,9 +1,14 @@
+//Modulo Realizado por Luis
+// Importa las bibliotecas necesarias
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import "./HomeServices.css";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function HomeServices() {
   //constante para form parte 1
@@ -19,6 +24,15 @@ export default function HomeServices() {
 
   const [seccionH2Data, setSeccionH2Data] = useState([]);
   const [seccionH2CardsData, setSeccionH2CardsData] = useState([]);
+
+  const { user, isAuthenticated } = useAuth0();
+
+  const isAdmin =
+    isAuthenticated &&
+    user &&
+    user["https://optimenLogin.com/roles"] &&
+    user["https://optimenLogin.com/roles"].includes("admin");
+  console.log("isAdmin value: ", isAdmin);
 
   // Obtener los datos guardados en el servidor al cargar la página
   useEffect(() => {
@@ -140,60 +154,65 @@ export default function HomeServices() {
   return (
     <div>
       <div className="Secc">
-        <div className="uno">
-          {/*Formulario para actualizar eventos parte 1 */}
-          <h1>Sección 2</h1>
-          <p>Aqui puedes editar el Titulo y la descripcción de esta sección</p>
+        {isAdmin ? (
+          <div className="uno">
+            {/*Formulario para actualizar eventos parte 1 */}
+            <h1>Section 2</h1>
+            <p>Here you can edit the Title and description of this section</p>
 
-          <form onSubmit={handleWelcomeFormSubmit}>
-            <FloatingLabel
-              controlId="floatingInput"
-              label="Titulo"
-              className="mb-3"
-            >
-              <Form.Control
-                type="text"
-                placeholder="name@example.com"
-                value={seccionH2Form.title}
-                onChange={(e) =>
-                  setSeccionH2Form({ ...seccionH2Form, title: e.target.value })
-                }
-              />
-            </FloatingLabel>
+            <form onSubmit={handleWelcomeFormSubmit}>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Title"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="text"
+                  placeholder="name@example.com"
+                  value={seccionH2Form.title}
+                  onChange={(e) =>
+                    setSeccionH2Form({
+                      ...seccionH2Form,
+                      title: e.target.value,
+                    })
+                  }
+                />
+              </FloatingLabel>
 
-            <FloatingLabel
-              controlId="floatingTextarea"
-              label="Descripcción"
-              className="mb-3"
-            >
-              <Form.Control
-                as="textarea"
-                placeholder="Leave a comment here"
-                value={seccionH2Form.content}
-                onChange={(e) =>
-                  setSeccionH2Form({
-                    ...seccionH2Form,
-                    content: e.target.value,
-                  })
-                }
-              />
-            </FloatingLabel>
-            <button type="submit" className="btn btn-success">
-              Guardar 
-            </button>
-          </form>
-        </div>
+              <FloatingLabel
+                controlId="floatingTextarea"
+                label="Description"
+                className="mb-3"
+              >
+                <Form.Control
+                  as="textarea"
+                  placeholder="Leave a comment here"
+                  value={seccionH2Form.content}
+                  onChange={(e) =>
+                    setSeccionH2Form({
+                      ...seccionH2Form,
+                      content: e.target.value,
+                    })
+                  }
+                />
+              </FloatingLabel>
+              <button type="submit" className="btn btn-success">
+                Save
+              </button>
+            </form>
+          </div>
+        ) : null}
 
         <div className="uno">
           {/*Formulario para cards*/}
 
           <form onSubmit={handleSeccionH2CardsFormSubmit}>
-            <h1>Sección 2 cards</h1>
-            <p>Aqui puedes agregar mas targetas de servicios o quitar</p>
+            <h1>Section 2 cards</h1>
+            <p>Here you can add more service cards or remove</p>
 
             <FloatingLabel
               controlId="floatingInput"
-              label="Titulo"
+              label="Title"
               className="mb-3"
             >
               <Form.Control
@@ -209,49 +228,52 @@ export default function HomeServices() {
               />
             </FloatingLabel>
 
-            <button type="submit" className="btn btn-success" >Guardar tarjeta</button>
+            <button type="submit" className="btn btn-success">
+              Save Card
+            </button>
           </form>
         </div>
       </div>
 
       <div className="Secc">
         {/*Listado del titulo*/}
-        <div className="uno">
-          <Table striped bordered hover className="TablaC">
-            <thead>
-              <tr>
-                <th>Titulo</th>
-                <th>Descripcción</th>
-                <th>Eliminar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {seccionH2Data.map((noticia) => (
-                <tr key={noticia._id}>
-                  <td>{noticia.title}</td>
-                  <td>{noticia.content}</td>
-                  <td>
-                    <button
-                      key={noticia._id}
-                      onClick={() => eliminarEvento(noticia._id)}
-                      className="btn btn-danger"
-                    >
-                      Eliminar
-                    </button>
-                  </td>
+        {isAdmin ? (
+          <div className="uno">
+            <Table striped bordered hover className="TablaC">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Delete</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
-
+              </thead>
+              <tbody>
+                {seccionH2Data.map((noticia) => (
+                  <tr key={noticia._id}>
+                    <td>{noticia.title}</td>
+                    <td>{noticia.content}</td>
+                    <td>
+                      <button
+                        key={noticia._id}
+                        onClick={() => eliminarEvento(noticia._id)}
+                        className="btn btn-danger"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        ) : null}
         {/*Listado del cards*/}
         <div className="uno">
           <Table striped bordered hover className="TablaC">
             <thead>
               <tr>
-                <th>Titulo</th>
-                <th>Eliminar</th>
+                <th>Title</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -264,7 +286,7 @@ export default function HomeServices() {
                       onClick={() => eliminarTitleC(noticiaCards._id)}
                       className="btn btn-danger"
                     >
-                      Eliminar tarjeta
+                      Delete Card
                     </button>
                   </td>
                 </tr>

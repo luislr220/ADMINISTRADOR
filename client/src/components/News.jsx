@@ -95,14 +95,14 @@ export default function News() {
               onClick={() => eliminarNoticia(noticia._id)}
               class="btn btn-danger"
             >
-              Eliminar
+              Delete
             </button>
             <button
               key={noticia._id + "edit"}
               onClick={() => mostrarFormularioActualizar(noticia)}
               class="btn btn-success"
             >
-              Actualizar
+              Update
             </button>
           </Card>
         ))}
@@ -111,7 +111,7 @@ export default function News() {
       {formularioActualizar && (
         <div className="formularioActualizar">
           <div className="divh2">
-            <h2>Actualizar noticia</h2>
+            <h2>Update News</h2>
           </div>
           <NewsForm onSubmit={editarNoticia} noticia={formularioActualizar} />
         </div>

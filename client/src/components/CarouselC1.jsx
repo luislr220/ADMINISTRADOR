@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './CustomersCarusel.css';
+import "./CustomersCarusel.css";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
@@ -58,10 +58,10 @@ export default function CarouselC1() {
     axios
       .delete(`http://localhost:3002/carouselC1/${id}`)
       .then(() => {
-        const noticiasActualizadas = carouselC1Data.filter(
+        const carouselC1DataActualizado = carouselC1Data.filter(
           (noticia) => noticia._id !== id
         );
-        setCarouselC1Data(noticiasActualizadas);
+        setCarouselC1Data(carouselC1DataActualizado);
       })
       .catch((error) => {
         console.log(error);
@@ -73,11 +73,11 @@ export default function CarouselC1() {
       <div className="uno1">
         {/*Formulario para editar el caurusel */}
         <form onSubmit={handleCarouselC1FormSubmit}>
-          <h1>Sección 1</h1>
-          <p>Aqui puedes quitar o agregar mas imagenes al carrusel</p>
+          <h1>Section 1</h1>
+          <p>Here you can remove or add more images to the carousel</p>
           <FloatingLabel
             controlId="floatingInput"
-            label="Imagen"
+            label="Image URL"
             className="mb-3"
           >
             <Form.Control
@@ -94,7 +94,7 @@ export default function CarouselC1() {
           </FloatingLabel>
 
           <button type="submit" className="btn btn-success">
-            Guardar Imagen
+            Save image
           </button>
         </form>
       </div>
@@ -104,13 +104,14 @@ export default function CarouselC1() {
         {carouselC1Data.map((noticia) => (
           <Card border="dark" style={{ width: "10rem" }} key={noticia._id}>
             <Card.Img variant="top" src={noticia.imagesC1} />
-            <button
-              key={noticia._id}
-              onClick={() => eliminarImagenC1(noticia._id)}
-              className="btn btn-danger"
-            >
-              Eliminar Imagen
-            </button>
+            <hr/>
+              <button
+                key={noticia._id}
+                onClick={() => eliminarImagenC1(noticia._id)}
+                className="btn btn-danger"
+              >
+                Delete image
+              </button>
           </Card>
         ))}
       </div>
