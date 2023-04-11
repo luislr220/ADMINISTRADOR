@@ -15,7 +15,7 @@ En esta carpeta se encuentra la vista estatica la cual tiene sus propias depende
 * Seguido de esto se debera el mismo procedimiento que el punto de de la carpeta client. <br/> como referencia se tomara las siguientes dependecias que debera de tener. <br/><br/>  *<img width="214" alt="image" src="https://user-images.githubusercontent.com/114530204/231022788-52a7c097-6e54-4883-a461-63387900b8eb.png">* <br/><br/> Algunas dependecias pueden variar, ya que se puede agregar otra posiblemente en el transcurso de la semana.
   
   
-  # Carpeta server
+# Carpeta server
 
 En esta carpeta se encuentra el servidor el cual tiene sus propias dependencias.
 * Para instalar las dependecias debe de abrir un terminal ya sea integrado o del CMD y una vez este en esta carpeta debe de ejecutar el comando *npm install*
