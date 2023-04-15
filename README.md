@@ -24,9 +24,7 @@ En esta carpeta se encuentra la vista estatica la cual tiene sus propias depende
 En esta carpeta se encuentra el servidor el cual tiene sus propias dependencias.
 * Para instalar las dependecias debe de abrir un terminal ya sea integrado o del CMD y una vez este en esta carpeta debe de ejecutar el comando *npm install*
 
-* este trabajo esta conectado a una base de datos local, por lo que debera tener instalado MongoCompass y debera de tener su localhost de la siguiente manera:<br/> <img width="591" alt="image" src="https://user-images.githubusercontent.com/114530204/231022381-a8c969d3-7dca-4984-96ac-bdebce2117cd.png"><br/> Por lo que su archivo .env debe de quedar de la siguiente manera: <br/> <img width="352" alt="image" src="https://user-images.githubusercontent.com/114530204/231022489-c44f62fc-ff18-4c90-88a7-dddf455d7547.png"><br/><br/> Donde el */eventos* es una base de datos que ya debe de estar creada. Pero si no quiere instalar mongoCompass y lo quiere hacer con Atlas simplemente configure su archivo .env a la dirección de su base de datos
-
-* Una vez que ya tenga esta configuración puede guardar e instalar las dependecias con *npm install*.<br/> Las dependencias deberan ser las siguientes:<br/><img width="164" alt="image" src="https://user-images.githubusercontent.com/114530204/231024934-8d413026-91f6-4ce9-9a23-c91ad036d9d3.png">
+* Las dependencias deberan ser las siguientes:<br/><img width="164" alt="image" src="https://user-images.githubusercontent.com/114530204/231024934-8d413026-91f6-4ce9-9a23-c91ad036d9d3.png">
 
 
 
