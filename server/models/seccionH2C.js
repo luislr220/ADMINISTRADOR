@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const seccionH2CSchema = new mongoose.Schema({
   titleC: {
     type: String,
-    required: false,
+    required: true,
   }
 });
 

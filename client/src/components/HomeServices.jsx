@@ -11,7 +11,7 @@ import Form from "react-bootstrap/Form";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function HomeServices() {
-  //constante para form parte 1
+  // Estado para almacenar el contenido del formulario
   const [seccionH2Form, setSeccionH2Form] = useState({
     title: "",
     content: "",
@@ -22,10 +22,15 @@ export default function HomeServices() {
     titleC: "",
   });
 
+  // Estado para almacenar los datos de bienvenida y card de la seccion 2 obtenidos del servidor
   const [seccionH2Data, setSeccionH2Data] = useState([]);
   const [seccionH2CardsData, setSeccionH2CardsData] = useState([]);
 
+
+   // Obtener el usuario y su estado de autenticación de Auth0
   const { user, isAuthenticated } = useAuth0();
+
+  // Comprobar si el usuario es administrador (tiene el rol "admin")
 
   const isAdmin =
     isAuthenticated &&
@@ -34,7 +39,7 @@ export default function HomeServices() {
     user["https://optimenLogin.com/roles"].includes("admin");
   console.log("isAdmin value: ", isAdmin);
 
-  // Obtener los datos guardados en el servidor al cargar la página
+  // Obtener los datos guardados en el servidor de el titulo y descripción al cargar la página
   useEffect(() => {
     axios
       .get("http://localhost:3002/seccionH2")
@@ -46,7 +51,7 @@ export default function HomeServices() {
       });
   }, []);
 
-  //Eliminar el evento
+  //Eliminar el evento por Id y actualizar la página despues de
   const eliminarEvento = (id) => {
     axios
       .delete(`http://localhost:3002/seccionH2/${id}`)
@@ -61,7 +66,7 @@ export default function HomeServices() {
       });
   };
 
-  //Form Para titulo y descripcción
+  //Función que manda los adatos ingresados en el formulario al servidor
   const handleWelcomeFormSubmit = async (e) => {
     e.preventDefault(); // prevenimos que se recargue la página al enviar el formulario
 
@@ -93,7 +98,7 @@ export default function HomeServices() {
 
   //***********************************************************************************************/
 
-  // Obtener los datos guardados en el servidor al cargar la página
+  // Obtener los datos guardados en el servidor al cargar la página para las cards
   useEffect(() => {
     axios
       .get("http://localhost:3002/seccionH2C")
